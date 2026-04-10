@@ -1,0 +1,468 @@
+{
+  "users": [
+    {
+      "id": "admin-001",
+      "name": "KGS Admin",
+      "phone": "9876543210",
+      "email": "admin@kgshome.com",
+      "password": "$2b$10$cICotYvJqoXZuyFju.w9reFmvgqegzcyvacwhcf7Ka0r3wQPQl.w6",
+      "role": "admin",
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "9fd801c0-749b-4e3f-85cf-4a4c87fa0e19",
+      "name": "Anbu Goddy",
+      "phone": "8778077747",
+      "email": "goddyanbu@gmail.com",
+      "password": "$2b$10$cUYatUTmW2iMx/MDC5R5eeZYd32YOQvFuvfmh3N/cUtYbg6VgXkhi",
+      "role": "admin",
+      "createdAt": "2026-04-10T14:49:50.821Z"
+    },
+    {
+      "id": "ef9c88af-0c72-4a58-b266-61bdadabe850",
+      "name": "dhaya",
+      "phone": "9080292639",
+      "email": "",
+      "password": "$2b$10$3ZaN4AdmXXv0mRG5Sifhbu6gtvXHHNiICG0fAXLTpZVFJjgXBp7Ou",
+      "role": "user",
+      "createdAt": "2026-04-10T15:28:08.468Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Velvet Royale Sofa",
+      "price": 45999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&h=600&fit=crop"
+      ],
+      "description": "A luxurious three-seater sofa upholstered in premium velvet fabric with gold-finished legs. Perfect for elegant living rooms.",
+      "dimensions": "220 × 85 × 80 cm",
+      "material": "Premium Velvet, Solid Teak",
+      "styleNotes": "Pairs beautifully with minimalist coffee tables and metallic accents. The deep navy velvet creates a bold focal point in neutral-toned rooms.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-002",
+      "name": "Artisan Wooden Coffee Table",
+      "price": 18999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=800&h=600&fit=crop"
+      ],
+      "description": "Hand-crafted solid wood coffee table with intricate carvings. A timeless piece for your living space.",
+      "dimensions": "120 × 60 × 45 cm",
+      "material": "Sheesham Wood",
+      "styleNotes": "The warm wood tones complement both traditional and contemporary interiors. Add a coffee table book and a small plant for a styled look.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-003",
+      "name": "Golden Lotus Vase",
+      "price": 3499,
+      "category": "Decorative",
+      "image": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1581783898382-80983a9e8018?w=800&h=600&fit=crop"
+      ],
+      "description": "An exquisite ceramic vase with gold-leaf lotus motifs. Adds a touch of opulence to any room.",
+      "dimensions": "15 × 15 × 35 cm",
+      "material": "Fine Ceramic, 24K Gold Leaf",
+      "styleNotes": "Display with dried pampas grass or fresh lilies on a console table for maximum impact.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-004",
+      "name": "Monstera Deliciosa Plant",
+      "price": 1299,
+      "category": "Greenery",
+      "image": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&h=600&fit=crop"
+      ],
+      "description": "A stunning tropical monstera plant in a handmade ceramic pot. Brings life and freshness to your interiors.",
+      "dimensions": "40 × 40 × 60 cm (with pot)",
+      "material": "Live Plant, Ceramic Pot",
+      "styleNotes": "Place near a bright window. The dramatic split leaves create beautiful shadow patterns on walls.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-005",
+      "name": "Heritage Brass Candle Stand",
+      "price": 2799,
+      "category": "Decorative",
+      "image": "https://images.unsplash.com/photo-1602523961358-f9f03dd557db?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1602523961358-f9f03dd557db?w=800&h=600&fit=crop"
+      ],
+      "description": "Traditional brass candle stand with an antique finish. Perfect for festive decorations and ambient lighting.",
+      "dimensions": "12 × 12 × 30 cm",
+      "material": "Solid Brass",
+      "styleNotes": "Group with other brass pieces on a mantel for a cohesive, heritage-inspired display.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-006",
+      "name": "Minimalist Bookshelf",
+      "price": 12999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=800&h=600&fit=crop"
+      ],
+      "description": "A sleek, wall-mounted bookshelf in matte black finish. Modern design meets functional storage.",
+      "dimensions": "80 × 25 × 150 cm",
+      "material": "Powder-Coated Steel, MDF",
+      "styleNotes": "Mix books with small sculptures and trailing plants for an artful, layered look.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-007",
+      "name": "Aromatic Gift Hamper",
+      "price": 4999,
+      "category": "Gifts",
+      "image": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=800&h=600&fit=crop"
+      ],
+      "description": "Curated gift box with scented candles, essential oils, and decorative accessories. Perfect for housewarming gifts.",
+      "dimensions": "30 × 25 × 15 cm",
+      "material": "Assorted Premium Materials",
+      "styleNotes": "An ideal gift for housewarmings, festivals, or special occasions that shows you care about quality.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-008",
+      "name": "Fiddle Leaf Fig",
+      "price": 1899,
+      "category": "Greenery",
+      "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&h=600&fit=crop"
+      ],
+      "description": "A lush fiddle leaf fig in a designer ceramic pot. The perfect statement plant for modern homes.",
+      "dimensions": "35 × 35 × 90 cm",
+      "material": "Live Plant, Designer Ceramic Pot",
+      "styleNotes": "Position in a bright corner. The large, violin-shaped leaves add instant sophistication.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-009",
+      "name": "Wall Art Canvas – Abstract Gold",
+      "price": 5999,
+      "category": "Decorative",
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=600&fit=crop"
+      ],
+      "description": "Premium abstract canvas with gold and beige tones. Hand-stretched on wooden frame, ready to hang.",
+      "dimensions": "80 × 120 cm",
+      "material": "Canvas, Acrylic Paint, Pine Frame",
+      "styleNotes": "Hang as a statement piece above a sofa or console. The metallic flecks catch light beautifully.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-010",
+      "name": "Luxury Dining Table Set",
+      "price": 67999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=800&h=600&fit=crop"
+      ],
+      "description": "A 6-seater dining table with matching chairs in premium teak wood with marble inlay.",
+      "dimensions": "180 × 90 × 75 cm",
+      "material": "Teak Wood, Italian Marble",
+      "styleNotes": "The marble inlay creates a stunning centrepiece. Pair with linen placemats and brass cutlery for complete elegance.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-011",
+      "name": "Decorative Table Lamp",
+      "price": 3999,
+      "category": "Gifts",
+      "image": "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=800&h=600&fit=crop"
+      ],
+      "description": "Elegant table lamp with gold geometric base and cream linen shade. Creates warm ambient lighting.",
+      "dimensions": "20 × 20 × 45 cm",
+      "material": "Brass, Linen",
+      "styleNotes": "Perfect bedside companion or study desk accent. The warm glow creates a cozy reading atmosphere.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-012",
+      "name": "Jade Succulent Terrarium",
+      "price": 999,
+      "category": "Greenery",
+      "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&h=600&fit=crop"
+      ],
+      "description": "A beautiful glass terrarium with assorted succulents. Low maintenance, high style.",
+      "dimensions": "18 × 18 × 22 cm",
+      "material": "Glass, Live Succulents, Pebbles",
+      "styleNotes": "Place on a windowsill or desk. The miniature garden brings calm and natural beauty to small spaces.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-013",
+      "name": "Marble Console Table",
+      "price": 28999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&h=600&fit=crop"
+      ],
+      "description": "A stunning console table with white marble top and brushed gold legs. The perfect entryway statement.",
+      "dimensions": "120 × 35 × 80 cm",
+      "material": "Carrara Marble, Brushed Gold Steel",
+      "styleNotes": "Style with a mirror above and decorative objects on top for a grand entryway moment.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-014",
+      "name": "Crystal Chandelier – Petite",
+      "price": 15999,
+      "category": "Decorative",
+      "image": "https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?w=800&h=600&fit=crop"
+      ],
+      "description": "A petite crystal chandelier that adds sparkle and glamour. Perfect for dining rooms and bedrooms.",
+      "dimensions": "40 × 40 × 50 cm",
+      "material": "K9 Crystal, Chrome Frame",
+      "styleNotes": "Hang over a dining table at 75-80cm above the surface for optimal light distribution and drama.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-015",
+      "name": "Handwoven Jute Rug",
+      "price": 7999,
+      "category": "Decorative",
+      "image": "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1600166898405-da9535204843?w=800&h=600&fit=crop"
+      ],
+      "description": "Natural jute area rug with geometric patterns. Eco-friendly and beautifully textured.",
+      "dimensions": "200 × 140 cm",
+      "material": "Natural Jute",
+      "styleNotes": "Layer over hardwood floors under a dining table or in a living room to add warmth and texture.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-016",
+      "name": "Scented Candle Trio",
+      "price": 1999,
+      "category": "Gifts",
+      "image": "https://images.unsplash.com/photo-1602607921857-d1a8895d8a2a?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1602607921857-d1a8895d8a2a?w=800&h=600&fit=crop"
+      ],
+      "description": "Set of three premium scented candles: Sandalwood, Jasmine, and Vanilla. Hand-poured soy wax.",
+      "dimensions": "8 × 8 × 10 cm each",
+      "material": "Soy Wax, Essential Oils, Glass",
+      "styleNotes": "Arrange on a decorative tray in the bathroom or bedroom for a spa-like atmosphere.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-017",
+      "name": "Antique Brass Photo Frame Set",
+      "price": 2499,
+      "category": "Gifts",
+      "image": "https://images.unsplash.com/photo-1582053433643-2ce97a0e0717?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1582053433643-2ce97a0e0717?w=800&h=600&fit=crop"
+      ],
+      "description": "Set of 3 antique-finish brass photo frames in varying sizes. Add personal touches to any shelf.",
+      "dimensions": "10×15, 13×18, 20×25 cm",
+      "material": "Brass, Glass",
+      "styleNotes": "Create a gallery wall or display on a console table alongside greenery for a curated look.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-018",
+      "name": "Modern Accent Chair",
+      "price": 22999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+      ],
+      "description": "A mid-century modern accent chair with bouclé upholstery and walnut wood legs. Statement seating.",
+      "dimensions": "72 × 75 × 80 cm",
+      "material": "Bouclé Fabric, Walnut Wood",
+      "styleNotes": "Place in a reading nook with a small side table and floor lamp for the perfect retreat.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-019",
+      "name": "Snake Plant – Large",
+      "price": 899,
+      "category": "Greenery",
+      "image": "https://images.unsplash.com/photo-1593482892580-e32e74e1f6cf?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1593482892580-e32e74e1f6cf?w=800&h=600&fit=crop"
+      ],
+      "description": "A tall snake plant (Sansevieria) in a sleek white pot. Known for air purification qualities.",
+      "dimensions": "25 × 25 × 80 cm",
+      "material": "Live Plant, Ceramic Pot",
+      "styleNotes": "Place in a bedroom or office corner. Virtually indestructible and filters indoor air naturally.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-020",
+      "name": "Ceramic Dinner Set – 12 Pcs",
+      "price": 8999,
+      "category": "Gifts",
+      "image": "https://images.unsplash.com/photo-1603199766980-18b4b9d7e8a4?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1603199766980-18b4b9d7e8a4?w=800&h=600&fit=crop"
+      ],
+      "description": "Premium bone china dinner set with gold rim detailing. 12-piece set for elegant dining.",
+      "dimensions": "Various (plates, bowls, cups)",
+      "material": "Bone China, 24K Gold Rim",
+      "styleNotes": "Elevate everyday meals. The gold rim catches candlelight for memorable dinner parties.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-021",
+      "name": "Ottoman Storage Pouf",
+      "price": 6499,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop"
+      ],
+      "description": "A velvet-upholstered ottoman with hidden storage. Doubles as extra seating and a coffee table.",
+      "dimensions": "50 × 50 × 40 cm",
+      "material": "Velvet, Pine Frame, Brass Legs",
+      "styleNotes": "Add a tray on top for drinks or place at the foot of a bed for added luxury.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-022",
+      "name": "Macramé Wall Hanging – XL",
+      "price": 2999,
+      "category": "Decorative",
+      "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop"
+      ],
+      "description": "Large hand-knotted cotton macramé wall hanging. Adds bohemian texture and visual interest.",
+      "dimensions": "60 × 120 cm",
+      "material": "Organic Cotton, Wooden Dowel",
+      "styleNotes": "Hang above a bed headboard or in a hallway to create a focal point with natural texture.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-023",
+      "name": "Luxury Bedside Table",
+      "price": 14999,
+      "category": "Furniture",
+      "image": "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=800&h=600&fit=crop"
+      ],
+      "description": "A contemporary bedside table with marble top and brushed gold legs. Two soft-close drawers.",
+      "dimensions": "45 × 40 × 55 cm",
+      "material": "Marble, Brushed Gold Steel, MDF",
+      "styleNotes": "Pair two symmetrically on either side of a bed. Top with a lamp and small plant for balance.",
+      "featured": true,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    },
+    {
+      "id": "prod-024",
+      "name": "Peace Lily in Premium Pot",
+      "price": 1499,
+      "category": "Greenery",
+      "image": "https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=600&h=400&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?w=800&h=600&fit=crop"
+      ],
+      "description": "Elegant peace lily with white blooms in a handcrafted terracotta pot. A symbol of serenity.",
+      "dimensions": "30 × 30 × 50 cm",
+      "material": "Live Plant, Terracotta Pot",
+      "styleNotes": "Thrives in low light. Place in a bathroom or office for air purification and calming vibes.",
+      "featured": false,
+      "createdAt": "2026-04-10T13:53:08.845Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "KGS-MNT1654F-D3C6",
+      "userId": "9fd801c0-749b-4e3f-85cf-4a4c87fa0e19",
+      "userName": "Anbu Goddy",
+      "userPhone": "8778077747",
+      "address": "104.mettu street , ko puvanur ",
+      "landmark": "puvanur",
+      "items": [
+        {
+          "productId": "prod-007",
+          "productName": "Aromatic Gift Hamper",
+          "productImage": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600&h=400&fit=crop",
+          "price": 4999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 4999,
+      "status": "Pending",
+      "createdAt": "2026-04-10T14:58:09.136Z"
+    },
+    {
+      "id": "KGS-MNT1CEUH-6296",
+      "userId": "9fd801c0-749b-4e3f-85cf-4a4c87fa0e19",
+      "userName": "Anbu Goddy",
+      "userPhone": "8778077747",
+      "address": "Palanjur, Poonamallee, Thiruvallur, Tamil Nadu, 600124, India",
+      "landmark": "",
+      "items": [
+        {
+          "productId": "prod-002",
+          "productName": "Artisan Wooden Coffee Table",
+          "productImage": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=600&h=400&fit=crop",
+          "price": 18999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 18999,
+      "status": "Pending",
+      "createdAt": "2026-04-10T15:03:01.674Z"
+    }
+  ]
+}
