@@ -3,9 +3,9 @@
     {
       "id": "admin-001",
       "name": "KGS Admin",
-      "phone": "9876543210",
+      "phone": "8778077747",
       "email": "admin@kgshome.com",
-      "password": "$2b$10$cICotYvJqoXZuyFju.w9reFmvgqegzcyvacwhcf7Ka0r3wQPQl.w6",
+      "password": "$2b$10$39ZPr.0rBOMA.H.kfL2oduuNw9NTSzbdbySHCbd.w14gZMh7OiDBq",
       "role": "admin",
       "createdAt": "2026-04-10T13:53:08.845Z"
     },

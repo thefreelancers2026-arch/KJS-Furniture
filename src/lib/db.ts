@@ -8,9 +8,9 @@ const initialData: Database = {
     {
       id: 'admin-001',
       name: 'KGS Admin',
-      phone: '9876543210',
+      phone: '8778077747',
       email: 'admin@kgshome.com',
-      password: bcrypt.hashSync('admin123', 10),
+      password: bcrypt.hashSync('admin@2026', 10),
       role: 'admin',
       createdAt: new Date().toISOString(),
     },
