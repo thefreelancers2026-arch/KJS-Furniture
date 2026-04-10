@@ -3,8 +3,6 @@ import path from 'path';
 import bcrypt from 'bcryptjs';
 import { Database } from './types';
 
-const DB_PATH = path.join(process.cwd(), 'data', 'db.json');
-
 const initialData: Database = {
   users: [
     {
@@ -295,13 +293,26 @@ const initialData: Database = {
   orders: [],
 };
 
+const IS_VERCEL = process.env.VERCEL === '1';
+const DB_PATH = IS_VERCEL ? '/tmp/db.json' : path.join(process.cwd(), 'data', 'db.json');
+
 function ensureDbExists(): void {
   const dir = path.dirname(DB_PATH);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
+  
   if (!fs.existsSync(DB_PATH)) {
-    fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
+    if (IS_VERCEL) {
+      const bundledDb = path.join(process.cwd(), 'data', 'db.json');
+      if (fs.existsSync(bundledDb)) {
+        fs.copyFileSync(bundledDb, DB_PATH);
+      } else {
+        fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
+      }
+    } else {
+      fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
+    }
   }
 }
 
@@ -321,5 +332,14 @@ export function resetDb(): void {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
+  if (IS_VERCEL) {
+    const bundledDb = path.join(process.cwd(), 'data', 'db.json');
+    if (fs.existsSync(bundledDb)) {
+      fs.copyFileSync(bundledDb, DB_PATH);
+    } else {
+      fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
+    }
+  } else {
+    fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
+  }
 }
