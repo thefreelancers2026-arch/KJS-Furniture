@@ -53,7 +53,11 @@ export async function POST(req: NextRequest) {
       price: Number(price),
       category,
       image: image || 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop',
+      images: image ? [image] : ['https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop'],
       description: description || '',
+      dimensions: 'N/A',
+      material: 'N/A',
+      styleNotes: '',
       featured: Boolean(featured),
       createdAt: new Date().toISOString(),
     };
