@@ -28,7 +28,7 @@ const categories = [
   { name: 'Gifts', icon: '🎁', desc: 'Curated gift collections', img: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600&h=800&fit=crop' },
 ];
 
-const fadeIn = {
+const fadeIn: any = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -37,7 +37,7 @@ const fadeIn = {
   }),
 };
 
-const staggerContainer = {
+const staggerContainer: any = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
 };
