@@ -3,9 +3,9 @@
     {
       "id": "admin-001",
       "name": "KGS Admin",
-      "phone": "8778077747",
+      "phone": "9876543210",
       "email": "admin@kgshome.com",
-      "password": "$2b$10$39ZPr.0rBOMA.H.kfL2oduuNw9NTSzbdbySHCbd.w14gZMh7OiDBq",
+      "password": "$2b$10$cICotYvJqoXZuyFju.w9reFmvgqegzcyvacwhcf7Ka0r3wQPQl.w6",
       "role": "admin",
       "createdAt": "2026-04-10T13:53:08.845Z"
     },
@@ -17,15 +17,6 @@
       "password": "$2b$10$cUYatUTmW2iMx/MDC5R5eeZYd32YOQvFuvfmh3N/cUtYbg6VgXkhi",
       "role": "admin",
       "createdAt": "2026-04-10T14:49:50.821Z"
-    },
-    {
-      "id": "ef9c88af-0c72-4a58-b266-61bdadabe850",
-      "name": "dhaya",
-      "phone": "9080292639",
-      "email": "",
-      "password": "$2b$10$3ZaN4AdmXXv0mRG5Sifhbu6gtvXHHNiICG0fAXLTpZVFJjgXBp7Ou",
-      "role": "user",
-      "createdAt": "2026-04-10T15:28:08.468Z"
     }
   ],
   "products": [

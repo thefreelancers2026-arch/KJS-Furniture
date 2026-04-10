@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,22 +13,53 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
   const [loading, setLoading] = useState(false);
-  const { login, signup } = useAuth();
+  const [isResetPassword, setIsResetPassword] = useState(false);
+  const { user, login, signup } = useAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      if (user.role === 'admin') router.push('/admin');
+      else router.push('/');
+    }
+  }, [user, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setSuccessMsg('');
     setLoading(true);
+
+    if (isResetPassword) {
+      try {
+        const res = await fetch('/api/auth/reset', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone, newPassword: password }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Reset failed');
+        setSuccessMsg('Password updated successfully! Please login.');
+        setIsResetPassword(false);
+        setPassword('');
+      } catch (err: unknown) {
+        setError(err instanceof Error ? err.message : 'Something went wrong');
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
     try {
       if (isLogin) {
-        const user = await login(phone, password);
-        if (user.role === 'admin') router.push('/admin');
+        const loggedInUser = await login(phone, password);
+        if (loggedInUser.role === 'admin') router.push('/admin');
         else router.push('/');
       } else {
-        const user = await signup(name, phone, email, password);
-        if (user.role === 'admin') router.push('/admin');
+        const newUser = await signup(name, phone, email, password);
+        if (newUser.role === 'admin') router.push('/admin');
         else router.push('/');
       }
     } catch (err: unknown) {
@@ -86,28 +117,37 @@ export default function LoginPage() {
                Premium Gallery
              </span>
              <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4 text-[#1a1a1a]">
-               {isLogin ? 'Welcome Back.' : 'Join Our Curation.'}
+               {isResetPassword ? 'Reset Password.' : isLogin ? 'Welcome Back.' : 'Join Our Curation.'}
              </h1>
              <p className="text-sm font-light text-[#5e604d] leading-relaxed">
-               {isLogin ? 'Enter your details to access your bespoke orders and curated collections.' : 'Create an account to gain exclusive access to our timeless pieces.'}
+               {isResetPassword ? 'Enter your registered phone number and a new password.' : isLogin ? 'Enter your details to access your bespoke orders and curated collections.' : 'Create an account to gain exclusive access to our timeless pieces.'}
              </p>
           </div>
 
           {/* Toggle */}
-          <div className="flex bg-[#faf9f6] p-1.5 rounded-sm mb-10 border border-[#1a1a1a]/5">
-            <button
-              onClick={() => { setIsLogin(true); setError(''); }}
-              className={`flex-1 py-3 text-xs font-semibold tracking-widest uppercase transition-all rounded-sm ${isLogin ? 'bg-white shadow-sm text-[#1a1a1a]' : 'text-[#7f7663] hover:text-[#1a1a1a]'}`}
-            >
-              Log In
-            </button>
-            <button
-              onClick={() => { setIsLogin(false); setError(''); }}
-              className={`flex-1 py-3 text-xs font-semibold tracking-widest uppercase transition-all rounded-sm ${!isLogin ? 'bg-[#1a1a1a] shadow-sm text-white' : 'text-[#7f7663] hover:text-[#1a1a1a]'}`}
-            >
-              Register
-            </button>
-          </div>
+          {!isResetPassword && (
+            <div className="flex bg-[#faf9f6] p-1.5 rounded-sm mb-10 border border-[#1a1a1a]/5">
+              <button
+                onClick={() => { setIsLogin(true); setError(''); setSuccessMsg(''); }}
+                className={`flex-1 py-3 text-xs font-semibold tracking-widest uppercase transition-all rounded-sm ${isLogin ? 'bg-white shadow-sm text-[#1a1a1a]' : 'text-[#7f7663] hover:text-[#1a1a1a]'}`}
+              >
+                Log In
+              </button>
+              <button
+                onClick={() => { setIsLogin(false); setError(''); setSuccessMsg(''); }}
+                className={`flex-1 py-3 text-xs font-semibold tracking-widest uppercase transition-all rounded-sm ${!isLogin ? 'bg-[#1a1a1a] shadow-sm text-white' : 'text-[#7f7663] hover:text-[#1a1a1a]'}`}
+              >
+                Register
+              </button>
+            </div>
+          )}
+
+          {successMsg && (
+            <div className="mb-8 p-4 bg-green-50/50 border-l-2 border-green-500 text-green-700 text-sm flex items-start gap-3">
+              <span className="mt-0.5 text-lg leading-none">✓</span>
+              <span>{successMsg}</span>
+            </div>
+          )}
 
           {error && (
             <div className="mb-8 p-4 bg-red-50/50 border-l-2 border-red-500 text-red-600 text-sm flex items-start gap-3">
@@ -117,7 +157,7 @@ export default function LoginPage() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {!isLogin && (
+            {!isLogin && !isResetPassword && (
               <div className="animate-fade-in">
                 <input
                   type="text"
@@ -125,7 +165,7 @@ export default function LoginPage() {
                   onChange={e => setName(e.target.value)}
                   className="w-full py-4 bg-transparent border-b border-[#1a1a1a]/20 text-sm outline-none transition-colors focus:border-[#D4AF37] placeholder:text-[#1a1a1a]/40"
                   placeholder="Full Name *"
-                  required={!isLogin}
+                  required={!isLogin && !isResetPassword}
                 />
               </div>
             )}
@@ -141,7 +181,7 @@ export default function LoginPage() {
               />
             </div>
 
-            {!isLogin && (
+            {!isLogin && !isResetPassword && (
               <div className="animate-fade-in">
                 <input
                   type="email"
@@ -159,11 +199,23 @@ export default function LoginPage() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 className="w-full py-4 bg-transparent border-b border-[#1a1a1a]/20 text-sm outline-none transition-colors focus:border-[#D4AF37] placeholder:text-[#1a1a1a]/40"
-                placeholder="Password *"
+                placeholder={isResetPassword ? 'New Password *' : 'Password *'}
                 required
                 minLength={6}
               />
             </div>
+            
+            {isLogin && !isResetPassword && (
+              <div className="flex justify-end pt-2">
+                <button 
+                  type="button" 
+                  onClick={() => setIsResetPassword(true)}
+                  className="text-xs text-[#7f7663] hover:text-[#1a1a1a] transition-colors"
+                >
+                  Forgot Password?
+                </button>
+              </div>
+            )}
 
             <button
               type="submit"
@@ -173,12 +225,22 @@ export default function LoginPage() {
               {loading ? (
                 <span className="flex items-center gap-3">
                   <span className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-                  Authenticating
+                  {isResetPassword ? 'Resetting' : 'Authenticating'}
                 </span>
               ) : (
-                isLogin ? 'Sign In' : 'Create Profile'
+                isResetPassword ? 'Reset Password' : isLogin ? 'Sign In' : 'Create Profile'
               )}
             </button>
+            
+            {isResetPassword && (
+              <button 
+                type="button"
+                onClick={() => { setIsResetPassword(false); setError(''); }}
+                className="w-full py-4 bg-transparent text-[#7f7663] text-sm font-semibold tracking-wider uppercase hover:text-[#1a1a1a] transition-colors"
+              >
+                Back to Login
+              </button>
+            )}
           </form>
         </div>
       </div>
