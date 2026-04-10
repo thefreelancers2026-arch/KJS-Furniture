@@ -294,52 +294,48 @@ const initialData: Database = {
 };
 
 const IS_VERCEL = process.env.VERCEL === '1';
-const DB_PATH = IS_VERCEL ? '/tmp/db.json' : path.join(process.cwd(), 'data', 'db.json');
+const DB_PATH = path.join(process.cwd(), 'data', 'db.json');
+
+let memoryDb: Database | null = null;
 
 function ensureDbExists(): void {
+  if (IS_VERCEL) return;
   const dir = path.dirname(DB_PATH);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  
   if (!fs.existsSync(DB_PATH)) {
-    if (IS_VERCEL) {
-      const bundledDb = path.join(process.cwd(), 'data', 'db.json');
-      if (fs.existsSync(bundledDb)) {
-        fs.copyFileSync(bundledDb, DB_PATH);
-      } else {
-        fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
-      }
-    } else {
-      fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
-    }
+    fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
   }
 }
 
 export function readDb(): Database {
+  if (IS_VERCEL) {
+    if (!memoryDb) memoryDb = JSON.parse(JSON.stringify(initialData));
+    return memoryDb!;
+  }
   ensureDbExists();
   const raw = fs.readFileSync(DB_PATH, 'utf-8');
   return JSON.parse(raw);
 }
 
 export function writeDb(data: Database): void {
+  if (IS_VERCEL) {
+    memoryDb = JSON.parse(JSON.stringify(data));
+    return;
+  }
   ensureDbExists();
   fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
 }
 
 export function resetDb(): void {
+  if (IS_VERCEL) {
+    memoryDb = JSON.parse(JSON.stringify(initialData));
+    return;
+  }
   const dir = path.dirname(DB_PATH);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
-  if (IS_VERCEL) {
-    const bundledDb = path.join(process.cwd(), 'data', 'db.json');
-    if (fs.existsSync(bundledDb)) {
-      fs.copyFileSync(bundledDb, DB_PATH);
-    } else {
-      fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
-    }
-  } else {
-    fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
-  }
+  fs.writeFileSync(DB_PATH, JSON.stringify(initialData, null, 2));
 }
