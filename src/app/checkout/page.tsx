@@ -58,28 +58,28 @@ export default function CheckoutPage() {
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         try {
-          const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`, {
-            headers: {
-              'Accept-Language': 'en',
-              'User-Agent': 'KGSHomeDecors/1.0'
-            }
-          });
+          const res = await fetch(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&location=${pos.coords.longitude},${pos.coords.latitude}`);
           const data = await res.json();
-          if (data && data.display_name) {
-            setAddress(data.display_name);
+          
+          if (data && data.address && data.address.LongLabel) {
+            // ArcGIS provides highly accurate street-level 'LongLabel' or 'Match_addr' string
+            setAddress(data.address.LongLabel);
+          } else if (data && data.address && data.address.Match_addr) {
+            setAddress(data.address.Match_addr);
           } else {
-            setError('Could not fetch address from coordinates.');
+            setError('Could not fetch exact street address. Please enter manually.');
           }
         } catch (err) {
-          setError('Failed to fetch location data.');
+          setError('Failed to fetch location data. Please enter manually.');
         } finally {
           setIsLocating(false);
         }
       },
-      () => {
-        setError('Location access denied or unavailable.');
+      (error) => {
+        setError(error.message || 'Location access denied or unavailable.');
         setIsLocating(false);
-      }
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
     );
   };
 
