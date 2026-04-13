@@ -14,9 +14,18 @@
       "name": "Anbu Goddy",
       "phone": "8778077747",
       "email": "goddyanbu@gmail.com",
-      "password": "$2b$10$cUYatUTmW2iMx/MDC5R5eeZYd32YOQvFuvfmh3N/cUtYbg6VgXkhi",
+      "password": "$2b$10$4T2Q/ouxeaBtQkS9usNHR.MgdtB0SD5jW/Fx3in76TQqiju/TgVWW",
       "role": "admin",
       "createdAt": "2026-04-10T14:49:50.821Z"
+    },
+    {
+      "id": "220e1a84-9937-450f-8ed4-23d246ffe7dc",
+      "name": "RITHIGA",
+      "phone": "809897118",
+      "email": "",
+      "password": "$2b$10$6ASqLSIcffHtFN9AsxvbYugnTews0jYbstEowp73cCF6Ku7ANGucm",
+      "role": "user",
+      "createdAt": "2026-04-13T09:50:07.112Z"
     }
   ],
   "products": [
@@ -432,7 +441,7 @@
         }
       ],
       "totalPrice": 4999,
-      "status": "Pending",
+      "status": "Delivered",
       "createdAt": "2026-04-10T14:58:09.136Z"
     },
     {
@@ -454,6 +463,46 @@
       "totalPrice": 18999,
       "status": "Pending",
       "createdAt": "2026-04-10T15:03:01.674Z"
+    },
+    {
+      "id": "KGS-MNX0BS5D-7BB5",
+      "userId": "9fd801c0-749b-4e3f-85cf-4a4c87fa0e19",
+      "userName": "Anbu Goddy",
+      "userPhone": "8778077747",
+      "address": "83/1 Pandian Street, Alagapuram, Bhuvaneswari Nagar, Salem, Tamil Nadu, 636004, IND",
+      "landmark": "",
+      "items": [
+        {
+          "productId": "prod-003",
+          "productName": "Golden Lotus Vase",
+          "productImage": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=600&h=400&fit=crop",
+          "price": 3499,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 3499,
+      "status": "Delivered",
+      "createdAt": "2026-04-13T09:45:37.349Z"
+    },
+    {
+      "id": "KGS-MNX0I8S1-2DB8",
+      "userId": "220e1a84-9937-450f-8ed4-23d246ffe7dc",
+      "userName": "RITHIGA",
+      "userPhone": "809897118",
+      "address": "83/1 Pandian Street, Alagapuram, Bhuvaneswari Nagar, Salem, Tamil Nadu, 636004, IND",
+      "landmark": "",
+      "items": [
+        {
+          "productId": "prod-002",
+          "productName": "Artisan Wooden Coffee Table",
+          "productImage": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=600&h=400&fit=crop",
+          "price": 18999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 18999,
+      "status": "Delivered",
+      "createdAt": "2026-04-13T09:50:38.833Z"
     }
   ]
 }

@@ -46,28 +46,11 @@ export default function HomePage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!authLoading && !user) {
-      router.push('/login');
-    }
-  }, [user, authLoading, router]);
-
-  useEffect(() => {
     fetch('/api/products?featured=true')
       .then(r => r.json())
       .then(d => { setFeatured(d.products || []); setLoaded(true); })
       .catch(() => setLoaded(true));
   }, []);
-
-  if (authLoading || !user) {
-    return (
-      <div className="w-screen h-screen flex items-center justify-center bg-[#050505]">
-        <div className="flex flex-col items-center gap-6">
-           <div className="w-12 h-12 rounded-full border-t-2 border-r-2 border-[#D4AF37] animate-spin" />
-           <p className="text-xs tracking-widest uppercase font-medium text-[#D4AF37]">Authenticating</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37] selection:text-white relative">
