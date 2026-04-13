@@ -77,98 +77,80 @@ export default function HomePage() {
       <Navbar />
 
       {/* ═══════════ HERO SECTION ═══════════ */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#faf9f6]">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#050505]">
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 mix-blend-screen pointer-events-none">
+           <source src="https://res.cloudinary.com/dfonotyfb/video/upload/v1775585556/dds3_1_rqhg7x.mp4" type="video/mp4" /> 
+        </video>
+        
         {/* Soft Background Accents */}
-        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-[#D4AF37]/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-[#D4AF37]/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/80 z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#050505]/40 to-[#050505] z-0" />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            {/* Context/Text - 5 columns */}
-            <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mb-8"
-              >
-                <span className="inline-block px-4 py-2 border border-[#D4AF37]/30 rounded-full text-xs font-semibold tracking-[0.2em] uppercase text-[#735c00] bg-[#D4AF37]/5">
-                  Virudhachalam's Elite Gallery
-                </span>
-              </motion.div>
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full z-10 flex flex-col items-center justify-center text-center -mt-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="mb-8"
+          >
+            <span className="inline-block px-6 py-2 border-b border-[#D4AF37]/50 text-[10px] font-semibold tracking-[0.4em] uppercase text-[#D4AF37]">
+              Virudhachalam's Elite Gallery
+            </span>
+          </motion.div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-[#1a1a1a] leading-tight mb-6"
-              >
-                Curating <br className="hidden lg:block" />
-                <span className="italic font-light text-[#D4AF37]">Timeless</span> <br className="hidden lg:block" />
-                Living Spaces.
-              </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+            className="font-serif text-5xl sm:text-7xl md:text-8xl font-bold text-white leading-[1.1] mb-8 drop-shadow-2xl"
+          >
+            Curating <br className="hidden md:block" />
+            <span className="italic font-light text-[#D4AF37]">Timeless</span> <br className="hidden md:block" />
+            Living Spaces.
+          </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg text-[#5e604d] leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0 font-light"
-              >
-                Discover meticulously crafted furniture and decor designed to elevate your home with sophisticated elegance and uncompromised quality.
-              </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+            className="text-base md:text-xl text-white/70 leading-relaxed mb-12 max-w-3xl mx-auto font-light drop-shadow-lg"
+          >
+            Discover meticulously crafted furniture and decor designed to elevate your home with sophisticated elegance and uncompromised quality.
+          </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start"
-              >
-                <Link href="/products" className="w-full sm:w-auto relative group">
-                  <div className="absolute inset-0 bg-[#D4AF37] translate-y-2 rounded-sm transition-transform duration-200 group-hover:translate-y-3 group-active:translate-y-0" />
-                  <div className="relative w-full px-10 py-4 bg-[#1a1a1a] text-white text-sm font-semibold tracking-wide uppercase transition-transform duration-200 group-hover:-translate-y-1 group-active:translate-y-0 text-center rounded-sm flex items-center justify-center gap-3">
-                    View Collection
-                    <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>→</motion.span>
-                  </div>
-                </Link>
-
-                <Link href="/products" className="w-full sm:w-auto relative group">
-                  <div className="absolute inset-0 bg-[#d0c5af] translate-y-2 rounded-sm transition-transform duration-200 group-hover:translate-y-3 group-active:translate-y-0" />
-                  <div className="relative w-full px-10 py-4 bg-white text-[#1a1a1a] border-2 border-[#1a1a1a] text-sm font-bold tracking-wide uppercase transition-transform duration-200 group-hover:-translate-y-1 group-active:translate-y-0 text-center rounded-sm">
-                    Shop Now
-                  </div>
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* High-End Visual - 7 columns */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="lg:col-span-7 order-1 lg:order-2 h-[50vh] lg:h-[70vh] relative w-full rounded-sm overflow-hidden shadow-2xl shadow-[#D4AF37]/5 bg-white border border-[#D4AF37]/10 flex items-center justify-center group"
-            >
-              <div className="absolute inset-0 bg-[#faf9f6]" />
-              <div className="relative w-full h-full overflow-hidden">
-                <Image 
-                  src="/blue-sofa-render.png" 
-                  alt="Premium dark blue modular sofa with gold legs"
-                  fill
-                  className="object-cover transition-transform duration-[20s] group-hover:scale-110 ease-out"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center gap-6 justify-center"
+          >
+            <Link href="/products" className="w-full sm:w-auto relative group">
+              <div className="absolute inset-0 bg-[#D4AF37] translate-y-1 rounded-sm transition-transform duration-300 group-hover:translate-y-2 group-active:translate-y-0" />
+              <div className="relative w-full px-12 py-4 bg-[#0a0a0a] text-[#EBCA68] text-xs font-bold tracking-[0.2em] uppercase transition-transform duration-300 group-hover:-translate-y-1 group-active:translate-y-0 text-center rounded-sm flex items-center justify-center gap-3 border border-[#D4AF37]/30 shadow-[0_0_30px_rgba(212,175,55,0.15)]">
+                View Collection
+                <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>→</motion.span>
               </div>
-              
-              <div className="absolute top-6 left-6 right-6 flex justify-between items-start pointer-events-none">
-                 <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-sm border border-black/5 text-[10px] font-bold tracking-widest uppercase text-[#1a1a1a] shadow-sm">
-                    Signature Visualization
-                 </div>
-              </div>
-            </motion.div>
+            </Link>
 
-          </div>
+            <Link href="/products" className="w-full sm:w-auto relative group overflow-hidden rounded-sm">
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/10" />
+              <div className="relative w-full px-12 py-4 border border-white/20 text-white/90 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 text-center flex items-center justify-center">
+                Shop Now
+              </div>
+            </Link>
+          </motion.div>
         </div>
+        
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
+        >
+           <span className="text-[9px] uppercase tracking-[0.4em] text-white/40">Scroll</span>
+           <div className="w-[1px] h-16 bg-gradient-to-b from-[#D4AF37]/50 to-transparent" />
+        </motion.div>
       </section>
 
       {/* ═══════════ CATEGORIES ═══════════ */}

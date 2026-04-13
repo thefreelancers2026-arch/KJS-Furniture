@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { Playfair_Display, Outfit, Cinzel } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
@@ -7,6 +7,12 @@ import { CartProvider } from "@/context/CartContext";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
   display: "swap",
 });
 
@@ -29,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${outfit.variable} ${playfair.variable} ${cinzel.variable} font-sans antialiased`}>
         <AuthProvider>
           <CartProvider>
             {children}

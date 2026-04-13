@@ -85,25 +85,44 @@ function ProductsCatalogInner() {
     <main className="min-h-screen bg-white text-[#1a1a1a] selection:bg-[#D4AF37] selection:text-white pt-[90px]">
       <Navbar />
 
-      {/* Header */}
-      <div className="bg-[#faf9f6] py-16 border-b border-[#1a1a1a]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Cinematic Header */}
+      <div className="relative min-h-[50vh] flex flex-col justify-center overflow-hidden bg-black py-20 -mt-[90px] pt-[120px]">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-40 mix-blend-screen pointer-events-none"
+        >
+           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-0 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-white/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full z-10 flex flex-col items-center justify-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="flex flex-col items-center text-center"
           >
-            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#D4AF37] mb-4">
+            <span className="liquid-glass rounded-full px-6 py-2 border border-white/10 text-[10px] font-semibold uppercase tracking-[0.4em] text-white/80 mb-6 drop-shadow-md">
               Curated Selection
             </span>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1a1a1a] mb-6">
-              {category !== 'All' ? category : 'The Collection'}
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight text-white mb-6 drop-shadow-2xl">
+              {category !== 'All' ? category : <>The <em className="italic text-white/90">Collection</em></>}
             </h1>
-            <div className="w-16 h-[1px] bg-[#1a1a1a]/20" />
+            <p className="max-w-xl mx-auto text-white/60 font-light text-sm md:text-base leading-relaxed mt-2">
+              Explore our meticulously curated pieces designed to elevate your living environment. We bring together finest materials and timeless craftsmanship.
+            </p>
           </motion.div>
+        </div>
+      </div>
 
-          {/* Search & Alignments */}
-          <div className="flex flex-col lg:flex-row gap-6 mt-16 items-center">
+      {/* Search & Alignments */}
+      <div className="bg-white py-8 border-b border-[#1a1a1a]/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-6 items-center">
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8 flex-1 w-full">
                {allCategories.map(cat => (
                  <button
